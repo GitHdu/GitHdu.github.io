@@ -1,2 +1,0 @@
-﻿
-document.write("<select onChange=Link_Open(this.options[this.selectedIndex].value,'link')><option value=''>友情链接</option><option value='http://www.hdu.edu.cn/'>杭州电子科技大学</option><option value='http://grs.hdu.edu.cn/'>杭电研究生院</option><option value='http://grs.hdu.edu.cn/'>杭电电子信息学院</option><option value='http://comm.hdu.edu.cn/index.html'>杭电通信工程学院</option></select>");
