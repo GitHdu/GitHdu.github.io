@@ -1,1 +1,38 @@
-function showLocale(t){var e,o,n,r=t.getYear();1900>r&&(r+=1900);var a=t.getMonth()+1;10>a&&(a="0"+a);var c=t.getDate();10>c&&(c="0"+c);var i=t.getHours();10>i&&(i="0"+i);var g=t.getMinutes();10>g&&(g="0"+g);var l=t.getSeconds();10>l&&(l="0"+l);var v=t.getDay();return 0==v&&(o='<font color="#000000">'),v>0&&6>v&&(o='<font color="#000000">'),6==v&&(o='<font color="#000000">'),0==v&&(v="星期日"),1==v&&(v="星期一"),2==v&&(v="星期二"),3==v&&(v="星期三"),4==v&&(v="星期四"),5==v&&(v="星期五"),6==v&&(v="星期六"),n="</font>",e=o+r+"年"+a+"月"+c+"日 "+i+":"+g+":"+l+"  "+v+n}function tick(){var t;t=new Date,document.getElementById("localtime").innerHTML=showLocale(t),window.setTimeout("tick()",1e3)}tick();
+function showLocale(objD)
+{
+    var str,colorhead,colorfoot;
+    var yy = objD.getYear();
+    if(yy<1900) yy = yy+1900;
+    var MM = objD.getMonth()+1;
+    if(MM<10) MM = '0' + MM;
+    var dd = objD.getDate();
+    if(dd<10) dd = '0' + dd;
+    var hh = objD.getHours();
+    if(hh<10) hh = '0' + hh;
+    var mm = objD.getMinutes();
+    if(mm<10) mm = '0' + mm;
+    var ss = objD.getSeconds();
+    if(ss<10) ss = '0' + ss;
+    var ww = objD.getDay();
+    if  ( ww==0 )  colorhead="<font color=\"#000000\">";
+    if  ( ww > 0 && ww < 6 )  colorhead="<font color=\"#000000\">";
+    if  ( ww==6 )  colorhead="<font color=\"#000000\">";
+    if  (ww==0)  ww="星期日";
+    if  (ww==1)  ww="星期一";
+    if  (ww==2)  ww="星期二";
+    if  (ww==3)  ww="星期三";
+    if  (ww==4)  ww="星期四";
+    if  (ww==5)  ww="星期五";
+    if  (ww==6)  ww="星期六";
+    colorfoot="</font>"
+    str = colorhead + yy + "年" + MM + "月" + dd + "日 " + hh + ":" + mm + ":" + ss + "  " + ww + colorfoot;
+    return(str);
+}
+function tick()
+{
+    var today;
+    today = new Date();
+    document.getElementById("localtime").innerHTML = showLocale(today);
+    window.setTimeout("tick()", 1000);
+}
+tick();
