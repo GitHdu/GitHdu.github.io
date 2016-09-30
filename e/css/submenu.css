@@ -1,9 +1,0 @@
-﻿#Menu ul li{position:relative;}
-#Menu ul li ul{position:absolute;left:0px;z-index:3;height:30px;padding:0px 0 0 0;white-space:nowrap;display:none;line-height:30px;}/*li行样式*/
-#Menu ul li ul li{display:inline;text-align:center;}/*li行样式*/
-#Menu ul li ul li a{font-weight:normal;font-size:12px;display:inline-block;width:60px;text-align:center;}
-#Menu ul li a.hover{color:#89c742;} /*鼠标经过时一级li样式*/
-#Menu ul li.hover a.menu{}
-#Menu ul li.hover ul{display:block;}
-
-
